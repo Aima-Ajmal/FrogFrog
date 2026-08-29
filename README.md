@@ -1,2 +1,2 @@
 # FrogFrog
-A game I am making. Guess what is it about? you are right, FROGS.
+I am making a game. Guess what is it about? you are right, FROGS.
