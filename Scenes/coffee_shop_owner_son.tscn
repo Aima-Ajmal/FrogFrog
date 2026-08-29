@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cou3rj7s3ui2x"]
+
+[ext_resource type="Texture2D" uid="uid://b60y55y8dq86j" path="res://assets/Characters/coffee shop frog child.png" id="1_i3sx0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_curyv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i3sx0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_une0d"]
+size = Vector2(12, 4.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jte0"]
+radius = 21.023796
+
+[node name="coffee_shop_owner_son" type="CharacterBody2D" unique_id=459618991]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2089033665]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_curyv")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=231854939]
+position = Vector2(0, -2.75)
+shape = SubResource("RectangleShape2D_une0d")
+
+[node name="chat detection" type="Area2D" parent="." unique_id=879332624]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat detection" unique_id=271954333]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_4jte0")

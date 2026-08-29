@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://rmk85fbalri7"]
+
+[ext_resource type="Texture2D" uid="uid://c8hbnav5jpc3j" path="res://assets/world/background/backboard.png" id="1_5rqxr"]
+[ext_resource type="Script" uid="uid://dkifeeysdav5r" path="res://scripts/dialogueplayer.gd" id="1_dgfud"]
+
+[node name="Dialogue" type="Control" unique_id=1012941764]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_dgfud")
+d_file = "res://dialogs/Coffee_Frog_Dialog_1.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2096391240]
+z_index = 3
+layout_mode = 0
+offset_left = -50.333336
+offset_top = -72.66667
+offset_right = 51.666656
+offset_bottom = -30.666676
+texture = ExtResource("1_5rqxr")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect" unique_id=346221410]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.333339
+offset_right = 171.0
+offset_bottom = 32.33334
+scale = Vector2(0.3, 0.3)
+text = "Name"
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect" unique_id=1625306817]
+layout_mode = 0
+offset_left = 15.000002
+offset_top = 16.000008
+offset_right = 376.6667
+offset_bottom = 109.33332
+scale = Vector2(0.2, 0.2)
+text = "Chatting....."

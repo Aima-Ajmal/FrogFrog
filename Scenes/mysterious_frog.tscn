@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dsxi5fhu3fwjh"]
+
+[ext_resource type="Texture2D" uid="uid://c3ealb05xejjh" path="res://assets/Characters/mysterious frog.png" id="1_ht88s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpnaj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ht88s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iomc3"]
+size = Vector2(12, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m2s7m"]
+radius = 27.0
+
+[node name="mysterious_frog" type="CharacterBody2D" unique_id=1956212795]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=515900584]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_jpnaj")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=750004625]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_iomc3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=767850923]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1567602988]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_m2s7m")

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://lrqoq2622sf0"]
+
+[ext_resource type="Texture2D" uid="uid://j0nh83g3xm6f" path="res://assets/Characters/coffee shop frog.png" id="1_wqmva"]
+[ext_resource type="Script" uid="uid://cy2wwpu5c8csa" path="res://scripts/coffee_shop_owner.gd" id="2_pdn1l"]
+[ext_resource type="PackedScene" uid="uid://rmk85fbalri7" path="res://Scenes/dialogue.tscn" id="3_wxnfq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdn1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wqmva")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxnfq"]
+size = Vector2(12, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0qkr"]
+radius = 23.021729
+
+[node name="CoffeeShopOwner" type="CharacterBody2D" unique_id=1238051607 node_paths=PackedStringArray("dialogue_box")]
+script = ExtResource("2_pdn1l")
+dialogue_box = NodePath("Dialogue")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1692316106]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_pdn1l")
+animation = &"idle"
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=987094933]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_wxnfq")
+
+[node name="chat_detection" type="Area2D" parent="." unique_id=1359977581]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection" unique_id=466741270]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_t0qkr")
+
+[node name="Timer" type="Timer" parent="." unique_id=96245695]
+autostart = true
+
+[node name="Dialogue" parent="." unique_id=1061018748 instance=ExtResource("3_wxnfq")]
+offset_top = 15.0
+offset_bottom = 15.0
